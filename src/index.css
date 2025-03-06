@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --darkBlue: #2b3945; /* Dark Mode Elements */
+    --darkMode: #202c37; /* Dark Mode Background */
+    --lightModeText: hsl(200, 15%, 8%); /* Light Mode Text */
+    --lightModeInput: #858585; /* Light Mode Input */
+    --LightMode: #fafafa; /* Light Mode Background */
+    --white: #ffffff; /* Dark Mode Text & Light Mode Elements */
+}
+#mycard{
+    color: var(--white);
+    background-color: var(--darkBlue);
+}
+#mypopup{
+    z-index: 10;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: white;
+}
+.body{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--darkMode) ;
+}
+.App{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 80%;
+    background: var(--darkMode);
+}
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+h1{
+    font-size: 2rem;
+    margin-right: 35%;
+}
+.inputSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 80%;
+}
+input{
+    padding: 10px;
+}
+select{
+    padding: 10px;
+}
+.popcon{
+    z-index: 10;
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 60px 60px 60px;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--darkMode);
+}
+.objBack{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.objBack .divButton{
+    padding: 20px 20px 20px 100px;
+    width: 100%;
+    height: auto;
+    align-self: flex-start;
+}
+.objBack .objFlag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px 10px 10px;
+    width: 75%;
+    height: 70%;
+}
+.objBack .objFlag img{
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+}
+.objBack .divButton button{
+    padding: 5px 25px;
+    color: var(--white);
+    border-radius: 4px;
+    background: var(--darkBlue)
+}
+.objBack .divButton button:hover{
+    background: var(--darkMode)
+}
+.objContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.objContent table{
+    position: relative;
+    margin-top: -20%;
+    width: 80%;
+    color: var(--white);
+    background: transparent
+}
+.objContent table thead td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.objContent table tr > td{
+    padding: 5px 0 5px 0;
+}
+.objContent table tr td span.tdText{
+    font-weight: 600;
+}
+.noSearch{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+@media (max-width: 800px) {
+    .App{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .inputSection{
+        margin-top: 110px;
+        flex-direction: column;
+        color: red
+    }
+    header{
+        justify-content:center;
+    }
+    button#darkmode{
+        margin: 0;
+    }
+    h1{
+        margin-right: 10px;
+        font-size: 25px;
+    }
+    select#mycard{
+        margin: 0;
+    }
+    #mycard{
+        margin-bottom: 20px;
+        width: 100%;
+        outline: none;
+    }
+    .popcon{
+        margin-top: 30px;
+        padding: 10px;
+        flex-direction: column;
+        overflow: scroll;
+        height: 100%;
+    }
+    .objBack{
+        height: 200px;
+    }
+    .objBack .divButton{
+        padding: 5px;
+    }
+    .objBack .objFlag{
+        width: 100%;
+    }
+    table{
+        font-size: 12px;
+    }
+    table thead{
+        width: 100%;
+    }
+    .objContent table thead td{
+        font-size: 16px;
+    }
+}
+@media (max-width: 500px) {
+    .App{
+        grid-template-columns: repeat(1, 1fr);
+    }   
+}
