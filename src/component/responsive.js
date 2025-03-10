@@ -8,10 +8,9 @@ import { useState } from 'react';
   const [isDarkMode, setIsDarkMode] = useState(mode);
 
   if (!isOpen) return null;
-  
+
   return (
     <>
-    {console.log(itemContent)}
        <div className='popcon'
         style={{
           background: isDarkMode? "#2b3945" : "#fafafa"
@@ -46,19 +45,25 @@ import { useState } from 'react';
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span className="tdText">Native Name:</span> {itemContent.native}</td>
-                    <td><span className="tdText">Top Level Domain:</span> <i>{itemContent.root}</i></td>
+                    <td><span className="tdText">Native Name:</span> {itemContent.native ? Object.values(itemContent.native).map(e => e.official) : 'no native name available'}</td>
+                    <td><span className="tdText">Top Level Domain:</span> <i>{itemContent.tld}</i></td>
                   </tr>
                   <tr>
                     <td><span className="tdText">Population:</span> {itemContent.population}</td>
-                    <td><span className="tdText">Currencies:</span> ....</td>
+                    <td><span className="tdText">Currencies:</span> {itemContent.currencies ? Object.values(itemContent.currencies).map(e => `${e.name} (${e.symbol})`).join(', ') : 'no currencies available'}</td>
                   </tr>
                   <tr>
                     <td><span className="tdText">Region:</span> {itemContent.region}</td>
-                    <td><span className="tdText">Languages:</span> ....</td>
+                    <td><span className="tdText">Languages:</span> {itemContent.languages ? Object.values(itemContent.languages).join(', ') : 'no languages available'}</td>
                   </tr>
                   <tr>
-                    <td><span className="tdText">Sub Region:</span> <i>{itemContent.region}</i></td>
+                    <td><span className="tdText">Sub Region:</span> <i>{itemContent.subregion}</i></td>
+                    <td><span className="tdText">Borders:</span> <span className='tdTextSpecial' 
+                    style={{
+                      color: isDarkMode? "#202c37":"#ffffff",
+                      background: isDarkMode?  "#ffffff" : "#202c37" 
+                    }}
+                    >{itemContent.borders ? Object.values(itemContent.borders).join(', ') : 'no borders'}</span></td>
                   </tr>
                   <tr>
                     <td><span className="tdText">Capital:</span> {itemContent.capital}</td>
