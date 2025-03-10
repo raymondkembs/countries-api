@@ -150,6 +150,12 @@ select{
     font-size: 20px;
     font-weight: bold;
 }
+.tdTextSpecial{
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 4px;
+}
 @media (max-width: 800px) {
     .App{
         grid-template-columns: repeat(2, 1fr);
