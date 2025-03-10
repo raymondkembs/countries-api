@@ -159,11 +159,13 @@ select{
 @media (max-width: 800px) {
     .App{
         grid-template-columns: repeat(2, 1fr);
+        width: 85%;
     }
     .inputSection{
         margin-top: 110px;
         flex-direction: column;
-        color: red
+        color: red;
+        width: 85%;
     }
     header{
         justify-content:center;
