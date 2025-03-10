@@ -31,8 +31,8 @@ function App() {
     return matchesSearchTerm && matchesContinent;
   });
 
+  
   const continents = [...new Set(data.map((country) => country.region))];
-
   const toggleMode = () =>{
     setIsDarkMode(!isDarkMode);
   }
@@ -124,12 +124,18 @@ function App() {
                   key={uuidv4()}
                   id={e.area}
                   name={e.name.common}
+                  native = {e.name.nativeName}
                   population={e.population}
                   region={e.region} 
                   capital={e.capital}
                   flags = {e.flags.png}
                   currencies = {e.currencies}
+                  tld ={e.tld}
                   mode = {isDarkMode}
+                  languages = {e.languages}
+                  subregion = {e.subregion}
+                  borders = {e.borders}
+                  cca3 = {e.cca3}
               />
             )
           })
